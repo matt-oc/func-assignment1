@@ -1,20 +1,20 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6c7cb2faad9be8cc74486d2a0e4d4466abe5287b4965bca276841a05472dc3d7
+-- hash: 1a92fda12de0d4fc21f416d8429da684b136cfe4e6f69aa6af38b13cf3a9f1d7
 
 name:           assignment1
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/assignment1#readme>
-homepage:       https://github.com/githubuser/assignment1#readme
-bug-reports:    https://github.com/githubuser/assignment1/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2021 Author name here
-license:        BSD3
+description:    Please see the README on GitHub at <https://github.com/matt-oc/assignment1#readme>
+homepage:       https://github.com/matt-oc/assignment1#readme
+bug-reports:    https://github.com/matt-oc/assignment1/issues
+author:         Matthew O'Connor
+maintainer:     Github: matt-oc
+copyright:      Github: matt-oc
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
@@ -23,17 +23,26 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/assignment1
+  location: https://github.com/matt-oc/assignment1
 
 library
   exposed-modules:
-      Lib
+      CleanData
+      CovidStats
+      StatReport
   other-modules:
+      Lib
       Paths_assignment1
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , csv
+    , sort
+    , split
+    , text ==1.2.*
+    , time >=1.8 && <1.12
+    , unique
   default-language: Haskell2010
 
 executable assignment1-exe
@@ -46,6 +55,9 @@ executable assignment1-exe
   build-depends:
       assignment1
     , base >=4.7 && <5
+    , csv
+    , text ==1.2.*
+    , time >=1.8 && <1.12
   default-language: Haskell2010
 
 test-suite assignment1-test
@@ -59,4 +71,7 @@ test-suite assignment1-test
   build-depends:
       assignment1
     , base >=4.7 && <5
+    , csv
+    , text ==1.2.*
+    , time >=1.8 && <1.12
   default-language: Haskell2010
